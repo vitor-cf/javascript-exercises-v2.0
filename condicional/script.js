@@ -79,19 +79,19 @@ serão lidos valores	iguais)	e	escrevê-los	em	ordem	crescente. */
 function lerValores(n1,n2,n3) {
     
     if(n1 > n2 && n1 > n3) {
-        return n1 + ' ' + n2 + ' ' + n3 ;
+        // return n1 + ' ' + n2 + ' ' + n3 ;
 
     } 
     if (n2 > n1 && n2 > n3) {
-        return n2 + ' ' + n1 + ' ' + n3 ;
+        // return n2 + ' ' + n1 + ' ' + n3 ;
     } 
     if (n3 > 1 && n3 > n2) {
-        return n3 + ' ' + n1 + ' ' + n2 ;
+        // return n3 + ' ' + n1 + ' ' + n2 ;
     }
 
 }
 
-console.log(lerValores(2,6,4));
+
 
 /* Tendo	 como	 entrada	 a	 altura	 e	 o	 sexo	 (codificado	 da	 seguinte	 forma:	
 1:feminino	 	 2:masculino)	 de	 uma	 pessoa,	 construa	 um	 programa	 que	
@@ -102,9 +102,66 @@ Fórmulas:
 
 function pesoIdeal (altura,sexo) {
 
-    let pesoIdealMulher = (62.1	*	altura)	– 44.7;
+    let pesoIdealMulher = (62.1	* altura) - 44.7;
+    let pesoIdealHomem = (72.7	*	altura)	- 58;
 
     if(sexo === 1) {
-        return pesoIdealMulher;
+        return '1: feminino' + ' peso: ' + pesoIdealMulher;
+    }
+    if(sexo ===2) {
+        return '2: masculino' + ' peso: ' + pesoIdealHomem;
+    }
+    if(sexo !== 1 || sexo !== 2) {
+        return 'Opção inválida';
     }
 } 
+
+/* Escreva	um	programa	para	ler	o	número	de	lados	de	um	polígono	regular	
+e	a	medida	do	lado	(em	cm).	Calcular	e	imprimir	o	seguinte:	
+− Se	o	número	de	lados	for	igual	a	3	escrever	TRIÂNGULO	e	o	valor	da	
+área
+− Se	o	número	de	lados	for	igual	a	4	escrever	QUADRADO	e	o	valor	da	
+sua	área.	
+− Se	o	número	de	lados	for	igual	a	5	escrever	PENTÁGONO. */ 
+
+
+
+function triangulo (base,altura) { 
+    
+    let areaTriangulo = (base * altura) / 2 ;
+
+    return areaTriangulo;
+
+} 
+
+function quadrado (lados) {
+
+    let areaQuadrado = lados * 4; 
+
+    return areaQuadrado;
+    
+}
+
+function pentagono (base1,altura1) {
+
+    let areaPentagono = (0.5 * base1 * altura1) * 5;
+
+    return areaPentagono;
+} 
+
+function poligonos (lados) {
+
+    if (lados === 3) {
+        return triangulo(10,10);
+    } 
+    if(lados === 4) {
+        return quadrado(10);
+    } 
+    if(lados === 5) {
+        return pentagono(10,10)
+    }
+
+} 
+
+console.log(poligonos(5));
+    
