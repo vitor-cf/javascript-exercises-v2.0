@@ -130,7 +130,7 @@ function triangulo (base,altura) {
     
     let areaTriangulo = (base * altura) / 2 ;
 
-    return areaTriangulo;
+     return areaTriangulo;
 
 } 
 
@@ -138,7 +138,7 @@ function quadrado (lados) {
 
     let areaQuadrado = lados * 4; 
 
-    return areaQuadrado;
+     return areaQuadrado;
     
 }
 
@@ -146,22 +146,96 @@ function pentagono (base1,altura1) {
 
     let areaPentagono = (0.5 * base1 * altura1) * 5;
 
-    return areaPentagono;
+     return areaPentagono;
 } 
 
 function poligonos (lados) {
 
     if (lados === 3) {
-        return triangulo(10,10);
+         return 'Número de lados: '+ lados + '|' + 'TRIÂNGULO' + '|' + 'Valor da area: ' + triangulo(10,10);
     } 
     if(lados === 4) {
-        return quadrado(10);
+         return 'Número de lados: '+ lados + '|' + 'QUADRADO' + '|' + 'Valor da area: ' + quadrado(10,10);
     } 
     if(lados === 5) {
-        return pentagono(10,10)
+        return 'Número de lados: '+ lados + '|' + 'PENTÁGONO' + '|' + 'Valor da area: ' + pentagono(10,10);
+    } if (lados < 3 ) {
+        return 'NÃO É UM POLÍGONO';
+    } 
+    if (lados > 5) {
+        return 'POLÍGONO NÃO IDENTIFICADO';
     }
 
+    
+/* Acrescente	 as	 seguintes	 mensagens	 à	 solução	 do	 exercício	 anterior	
+conforme	o	caso.	
+− Caso	 o	 número	 de	 lados	 seja	 inferior	 a	 3	 escrever	 NÃO	 É	 UM	
+POLÍGONO.	
+− Caso	o	número	de	lados	seja	superior	a	5	escrever	POLÍGONO	NÃO	
+IDENTIFICADO. */ 
+}   
+
+
+
+
+
+/* Escreva	um	programa	para	ler	3	valores	inteiros	e	escrever	o	maior	deles.	
+Considere	que	o	usuário	não	informará	valores	iguais. */
+    
+function lendoValores (n1,n2,n3) {
+
+    if(n1 > n2 && n1 > n3) {
+        return 'O número maior é: ' + n1;
+    } 
+    if(n2 > n1 && n2 > n3) {
+        return 'O número maior é: ' + n2;
+    }
+    if(n3 > n1 && n3 > n2) {
+        return 'O número maior é: ' + n3;
+    }
+}
+
+
+
+/* Escreva	 um	 programa que	 leia	 as	 medidas	 dos	 lados	 de	 um	 triângulo	 e	
+escreva	se	ele	é	Equilátero,	Isósceles	ou	Escaleno.	Sendo	que:	
+− Triângulo	Equilátero:	possui	os	3	lados	iguais.	
+− Triângulo	Isóscele:	possui	2	lados	iguais.	
+− Triângulo	Escaleno:	possui	3	lados	diferentes.
+ */ 
+
+function lerMedidas (m1,m2,m3) {
+
+    if (m1 === m2 && m1 === m3) {
+        return 'Triângulo	Equilátero:	possui	os	3	lados	iguais.	';
+    } 
+    if (m1 === m2 || m2 === m3 || m1 === m3) {
+        return 'Triângulo	Isóscele:	possui	2	lados	iguais.';
+    } 
+    if (m1 !== m2 && m2 !== m3) {
+        return 'Triângulo	Escaleno:	possui	3	lados	diferentes.';
+    }
+} 
+    
+
+/* Escreva	 um	 programa	 que	 leia	 o	 valor	 de	 3	 ângulos	 de	 um	 triângulo	 e	
+escreva	 se	 o	 triângulo	 é	 Acutângulo,	 Retângulo	 ou	 Obtusângulo.	 Sendo	
+que:	
+− Triângulo	Retângulo:	possui	um	ângulo	reto.	(igual	a	90º)
+− Triângulo	Obtusângulo:	possui	um	ângulo	obtuso.	(maior	que90º)	
+− Triângulo	Acutângulo:	possui	três	ângulos	agudos.	(menor	que	90º) */ 
+
+function lerValorAngulo (v1,v2,v3) {
+
+    if (v1 == 90 || v2 == 90 || v3 == 90) {
+        return 'Triângulo	Retângulo:	possui	um	ângulo	reto.	(igual	a	90º)';
+    } 
+    if (v1 > 90 || v2 > 90 || v3 > 90) {
+        return 'Triângulo	Obtusângulo:	possui	um	ângulo	obtuso.	(maior	que 90º)'; 
+    } 
+    if (v1 < 90 && v2 < 90 && v3 < 90) {
+        return 'Triângulo	Acutângulo:	possui	três	ângulos	agudos.	(menor	que	90º)';
+    }
 } 
 
-console.log(poligonos(5));
-    
+console.log(lerValorAngulo(1,2,5));
